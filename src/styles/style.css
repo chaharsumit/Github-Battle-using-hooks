@@ -1,49 +1,358 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+	v2.0 | 20110126
+	License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1.5;
+  line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.active{
+	color: #a52a2a;
+}
+/* text styles */
+
+.text-xsm {
+  font-size: 0.8rem;
+}
+
+.text-sm {
+  font-size: 1rem;
+}
+
+.text-md {
+  font-size: 1.2rem;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}
+
+.text-xlg {
+  font-size: 2rem;
+}
+
+.text-ulg {
+  font-size: 2.5rem;
+}
+
+.text-bold {
+  font-weight: 900;
+}
+
+.text-center{
+  text-align: center;
+}
+
+/* text styles */
+
+.header {
+  padding: 1rem 0;
+}
+.header .container {
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-menu {
+  gap: 1rem;
+}
+.select-menu {
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.dark-mode-btn:hover,
+.nav-menu-item:hover,
+.select-menu-item:hover{
+	cursor: pointer;
+}
+.repo-grid{
+	margin: 2rem 0;
+}
+.repo-grid .container{
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	row-gap: 2rem;
+}
+.account-card{
+	padding: 1rem;
+	background-color: #f2f2f2;
+	text-align: center;
+	border-radius: 0.25rem;
+	flex: 0 1 20%;
+	row-gap: 0.5rem;
+	flex-direction: column;
+  height: 500px;
+}
+.repo_card_image{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.battle-hero-container{
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+.battle-hero-card{
+  flex-direction: column;
+  text-align: center;
+  flex: 0 1 30%;
+  row-gap: 2rem;
+}
+.battle-icon{
+  font-size: 5rem;
+  color: goldenrod;
+  background-color: whitesmoke;
+  width: 100%;
+  padding: 4rem;
+}
+.battle-form-container{
+  margin-top: 2rem;
+}
+.form-label{
+  flex-direction: column;
+}
+.battle-form-div{
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.battle-form{
+  flex: 0 1 30%;
+}
+.submit-btn{
+  border-radius: 50%;
+  padding: 1rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(173, 52, 31);
+  border: none;
+  margin-top: 1rem;
+  color: white;
+}
+.submit-btn:hover{
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem red;
+}
+.form-label{
+  width: 100%;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.form-control{
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 0.5rem;
+}
+.battle-user-container{
+  margin-top: 3rem;
+}
+.battle-user-container{
+  flex: 0 1 35%;
+  gap: 1rem;
+  padding: 0 1rem;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+}
+.battle-avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.cross-btn{
+  color: white;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: red;
+  border-radius: 50%;
+}
+.cross-btn:hover{
+  cursor: pointer;
+}
+
+/* Loader */
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader{
+  margin: 2rem auto;
+  text-align: center;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: rgb(78, 130, 151);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }
