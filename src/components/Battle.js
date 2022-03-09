@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Outlet, Link } from 'react-router-dom';
+import Result from './Result';
 
 export default function Battle() {
   const [players, setPlayers] = useState({ playerOne: "", playerTwo: "" });
@@ -74,16 +76,21 @@ export default function Battle() {
   }
 
   return (
-    <div className="container">
-      <h1 className="text-xlg text-center">Instructions</h1>
-      <BattleHero />
-      <BattleForm
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        playersData={playersData}
-        handleReset={handleReset}
-      />
-    </div>
+    <>
+      <div className="container">
+        <h1 className="text-xlg text-center">Instructions</h1>
+        <BattleHero />
+        <BattleForm
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          playersData={playersData}
+          handleReset={handleReset}
+        />
+        {
+          playersData.playerOne && playersData.playerTwo && <BattleButton players={players} />
+        }
+      </div>
+    </>
   );
 }
 
@@ -172,4 +179,14 @@ function BattleForm(props) {
       </div>
     </section>
   );
+}
+
+function BattleButton(props){
+  return (
+    <button className="battle-btn text-md">
+      <Link className="link" to={{pathname: '/result', search: `?playerOne=${props.players.playerOne}&playerTwo=${props.players.playerTwo}`}}>
+        Battle
+      </Link>
+    </button>
+  )
 }
